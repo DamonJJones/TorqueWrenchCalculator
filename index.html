@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Torque Wrench Calculator</title>
+</head>
+<body>
+    <div class="calculator">
+        <h2>Torque Wrench Calculator</h2>
+        <p>Calculate torque with an extension and angle</p>
+
+        <label for="originalTorque">Torque Value:</label>
+        <input type="text" id="originalTorque" placeholder="Enter torque value" oninput="calculateTorque()">
+
+        <label for="originalLength">Original Length:</label>
+        <input type="text" id="originalLength" placeholder="Enter original length" oninput="calculateTorque()">
+
+        <label for="extensionLength">Extension Length:</label>
+        <input type="text" id="extensionLength" placeholder="Enter extension length" oninput="calculateTorque()">
+
+        <label for="extensionAngle">Extension Angle:</label>
+        <input type="text" id="extensionAngle" placeholder="Enter extension angle" oninput="calculateTorque()">
+
+        <label for="result">Resulting Torque:</label>
+        <input type="text" id="result" placeholder="Result" readonly>
+
+        <table id="variableTable">
+            <tr>
+                <th>Variable</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>Resulting Torque</td>
+                <td>The torque with the extension (output/result)</td>
+            </tr>
+            <tr>
+                <td>Torque Value</td>
+                <td>The initial torque without the extension</td>
+            </tr>
+            <tr>
+                <td>Total Length</td>
+                <td>The combined length of the torque wrench and the extension</td>
+            </tr>
+            <tr>
+                <td>Original Length</td>
+                <td>The length of the torque wrench without the extension</td>
+            </tr>
+            <tr>
+                <td>Extension Angle</td>
+                <td>The angle of the extension in degrees</td>
+            </tr>
+            <tr>
+                <td colspan="2" id="note">
+                    Note: Original Length = Torque Wrench Length (Center of Socket to Mid Handle)
+                </td>
+            </tr>
+            <tr id="formulaRow">
+                <td colspan="2">
+                    Formula: Resulting Torque = Torque Value × (Total Length / Original Length) × cos(Extension Angle)
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script src="torqueCalculator.js"></script>
+</body>
+</html>
